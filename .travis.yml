@@ -3,4 +3,9 @@ language: ruby
 rvm:
   - 2.2.2
 
+# Ensure we don't build for *every* commit (doesn't apply to PR builds)
+branches:
+  only:
+  - master
+
 before_install: gem install bundler -v 1.10.4
