@@ -18,14 +18,14 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.executables  << 'furious'
 
-  spec.add_dependency 'typhoeus'
+  spec.add_dependency 'typhoeus', '~> 0.7.2'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'minitest'
-  spec.add_development_dependency 'minitest-reporters'
-  spec.add_development_dependency 'mocha'
-  spec.add_development_dependency 'webmock'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'fakefs'
+  spec.add_development_dependency 'minitest', '~> 5.7.0'
+  spec.add_development_dependency 'minitest-reporters', '~> 1.0.17'
+  spec.add_development_dependency 'mocha', '~> 1.1.0'
+  spec.add_development_dependency 'webmock', '~> 1.21.0'
+  spec.add_development_dependency 'pry', '~> 0.10.1'
+  spec.add_development_dependency 'fakefs', '~> 0.6.7'
 end

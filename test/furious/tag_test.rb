@@ -10,12 +10,12 @@ module Furious
     end
 
     def test_tag_creates_git_tag
-      subject.expects(:system).with('git tag v1.0 && git push origin v1.0').returns(0)
+      subject.expects(:system).with('git tag v1.0 && git push origin v1.0').returns(true)
       subject.tag
     end
 
     def test_tag_raises_on_failure
-      subject.stub(:system, 123) do
+      subject.stub(:system, false) do
         error = assert_raises { subject.tag }
         assert_equal error.message, 'Failed to tag v1.0'
       end
