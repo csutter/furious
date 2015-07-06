@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'furious'
   spec.version       = Furious::VERSION
   spec.authors       = ['Christian Sutter']
-  spec.email         = ['chris@doublesignal.com']
+  spec.email         = ['csutter@noreply.users.github.com']
 
   spec.summary       = 'Push gems to Gemfury, the simple way.'
   spec.description   = 'Packages and uploads gems to Gemfury without all the baggage of the official gem.'
@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'minitest'
+  spec.add_development_dependency 'minitest-reporters'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'fakefs'
 end
