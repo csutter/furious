@@ -5,6 +5,8 @@ module Furious
     def setup
       ENV['GEMFURY_TOKEN'] = 'deadbeef'
       ENV['GEMFURY_ACCOUNT'] = 'account'
+
+      WebMock.disable_net_connect!
     end
 
     def test_new_fails_when_no_gemspec_given
@@ -29,19 +31,14 @@ module Furious
     end
 
     def test_push_pushes_to_gemfury
-      expected = lambda do |url, params|
-        assert_equal 'https://push.fury.io/deadbeef/account', url
-        assert_equal Hash.new(body: { package: 1 }), params
-        true
-      end
+      stub_request(:post, 'https://push.fury.io/deadbeef/account/')
+        .with { |request| request.body.include?('package=') }
+        .to_return(status: 200)
 
-      subject
-
+      subject # Initialize subject outside of FakeFS block
       FakeFS do
         File.write('dummy-1.0.gem', "I'M A GEM")
-        Typhoeus.stub(:post, expected) do
-          assert subject.push, 'Gem has not been pushed to Gemfury'
-        end
+        subject.push
       end
     end
 

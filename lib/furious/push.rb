@@ -7,7 +7,7 @@ module Furious
     private
 
     def gemfury_url
-      "https://#{gemfury_token}@push.fury.io/#{gemfury_account}/"
+      "https://push.fury.io/#{gemfury_token}/#{gemfury_account}/"
     end
 
     def gemfury_token

@@ -23,6 +23,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'minitest-reporters'
+  spec.add_development_dependency 'mocha'
+  spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'fakefs'
 end

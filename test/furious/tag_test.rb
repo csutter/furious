@@ -10,14 +10,8 @@ module Furious
     end
 
     def test_tag_creates_git_tag
-      expectation = lambda do |command|
-        assert_equal 'git tag v1.0 && git push origin v1.0', command
-        0
-      end
-
-      subject.stub(:system, expectation) do
-        subject.tag
-      end
+      subject.expects(:system).with('git tag v1.0 && git push origin v1.0').returns(0)
+      subject.tag
     end
 
     def test_tag_raises_on_failure
