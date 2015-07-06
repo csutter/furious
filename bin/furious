@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
 require 'bundler/setup'
 require 'furious'
 
-require 'pry'
-Pry.start
+Furious::Cli.new(ARGV).run

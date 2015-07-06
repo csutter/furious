@@ -17,7 +17,7 @@ end
 
 - `furious package` - build a gem package
 - `furious tag` - tags the version in the Git repository
-- `furious push` - pushes the gem to Gemfury (requires `package` to have been run successfully and a `GEMFURY_TOKEN` environment variable to be set to your token)
+- `furious push` - pushes the gem to Gemfury (requires `package` to have been run successfully, a `GEMFURY_TOKEN` environment variable to be set to your token, and a `GEMFURY_ACCOUNT` environment variable to be set to your account name)
 
 Running `furious release` does all of the above, perfect for running in your CI environment for auto-releasing.
 
