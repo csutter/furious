@@ -1,5 +1,3 @@
-require 'rubygems/package'
-
 module Furious
   class Job
     attr_reader :file, :spec
